@@ -41,6 +41,12 @@ jobs:
 
           # Loop: update carb absorption times: 30 min, 2 hr, 3 hr
           curl https://github.com/kkreamer/Loop/commit/e1de8495553047c4ee0b00d83a4ad4641e428003.patch | git apply -v --directory=Loop
+
+          # Loop: add current time line on 4 charts
+          curl https://github.com/kkreamer/Loop/commit/18642d085c7bb4ff7feece9decc31d0a0ef3e706.patch | git apply -v --directory=Loop
+          curl https://github.com/kkreamer/Loop/commit/e6ae1a90a458233f1fe3b06c6ff4ad6eb1e470f5.patch | git apply -v --directory=Loop
+          curl https://github.com/kkreamer/Loop/commit/d9b36a436bc3c558e0f4b3887e36cbbe2d7d77db.patch | git apply -v --directory=Loop
+          curl https://github.com/kkreamer/Loop/commit/33d1aaaf066e21a58957ee8a7776026ebde52c55.patch | git apply -v --directory=Loop
           
           # Submodule LoopKit patches:
           # LoopKit: Filename: customization details
