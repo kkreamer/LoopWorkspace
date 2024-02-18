@@ -28,7 +28,26 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: recursive
-      
+          
+      # Customize Loop: Download and apply patches
+      - name: Customize Loop
+        run: |
+          # Submodule Loop patches:
+          # Loop: Filename: customization details
+          #curl https://github.com/username/Loop/commit/SHA-1.patch | git apply -v --directory=Loop
+
+          # Loop: update future carbs from 1 hr to 4 hours
+          curl https://github.com/kkreamer/Loop/commit/12acff34fcbab4a45f294c40075a91adcd53bee8.patch | git apply -v --directory=Loop
+
+          # Loop: update carb absorption times: 30 min, 2 hr, 3 hr
+          curl https://github.com/kkreamer/Loop/commit/e1de8495553047c4ee0b00d83a4ad4641e428003.patch | git apply -v --directory=Loop
+          
+          # Submodule LoopKit patches:
+          # LoopKit: Filename: customization details
+          #curl https://github.com/username/LoopKit/commit/SHA-1.patch | git apply -v --directory=LoopKit
+
+          # Submodule xxxxx patches: Follow prototype above
+          
       # Patch Fastlane Match to not print tables
       - name: Patch Match Tables
         run: find /usr/local/lib/ruby/gems -name table_printer.rb | xargs sed -i "" "/puts(Terminal::Table.new(params))/d"
